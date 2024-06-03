@@ -1,0 +1,15 @@
+@if(editState){
+    <div class="widget">
+    <div>
+        <label for="r">slider red</label><input type="range" min="0" max="255" id="r" [(ngModel)]="editPatch.r"><br>
+        <label for="r">slider green</label><input type="range" min="0" max="255" id="r" [(ngModel)]="editPatch.g"><br>
+        <label for="r">slider blue</label><input type="range" min="0" max="255" id="r" [(ngModel)]="editPatch.b"><br>
+        <label for="r">slider alpha</label><input type="range" min="0" max="1" step="0.01" id="r" [(ngModel)]="editPatch.a"><br>
+        <label for="name">Name</label><input type="text" id="name" [(ngModel)]="editPatch.name">
+        <div class="preview-box" [style.background-color]="editPatch.rgba"></div>
+        <button (click)="onCancel.emit()" class="btn col-6">Cancel</button> 
+        <button (click)="onSubmit.emit(editPatch)" class="btn col-6" [disabled]="!editPatch.name">Submit</button> 
+    </div>
+
+</div>
+}
