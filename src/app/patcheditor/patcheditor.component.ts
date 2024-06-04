@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Colorpatch } from './models/colorpatch';
 import { ColorpatchComponent } from '../colorpatch/colorpatch.component';
@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
   imports: [CommonModule, ColorpatchComponent, EditorWidgetComponent],
   templateUrl: './patcheditor.component.html',
   styleUrl: './patcheditor.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PatcheditorComponent implements OnInit {
   patchService = inject(PatchService);

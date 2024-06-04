@@ -3,11 +3,12 @@ import { CardsService } from '../services/cards.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { CardComponent } from '../card/card.component';
+import { ShufflePipe } from '../pipes/shuffle.pipe';
 
 @Component({
   selector: 'app-memory',
   standalone: true,
-  imports: [AsyncPipe, CardComponent],
+  imports: [AsyncPipe, CardComponent, ShufflePipe],
   templateUrl: './memory.component.html',
   styleUrl: './memory.component.css'
 })

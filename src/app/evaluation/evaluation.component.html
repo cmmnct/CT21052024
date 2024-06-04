@@ -1,0 +1,35 @@
+<form [formGroup]="evaluationForm" (ngSubmit)="onSubmitForm($event)">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name" required><br>
+  <label for="function">Function: </label>
+  <select name="function" formControlName="function" required>
+    <option value="" disabled selected>your function</option>
+    <option value="0">trainee</option>
+    <option value="1">junior</option>
+    <option value="2">senior</option>
+    <option value="3">master</option>
+  </select><br>
+  <label for="dept">Afdeling: </label>
+  <select name="dept" formControlName="dept" required>
+    <option value="-1" disabled selected>Afdeling</option>
+    @for(dept of depts ; track $index){
+        <option [value]="$index">{{ dept }}</option>
+    }
+  </select><br>
+  <label for="course">Gevolgde cursus: </label>
+  <select name="course" formControlName="course" required>
+    <option value="-1" disabled selected>Gevolgde cursus</option>
+    @for(course of courses ; track $index){
+        <option [value]="$index">{{ course }}</option>
+    }
+  </select><br>
+  <label for="contentGrade">Hoe tevreden was u met de inhoud?</label>
+  <input type="range" name="contentGrade" min="1" max="5" formControlName="contentGrade"><br>
+  <label for="teacherGrade">Hoe tevreden was u met de docent?</label>
+  <input type="range" name="teacherGrade" min="1" max="5" formControlName="teacherGrade"><br>
+  <label for="useGrade">Hoe toepasbaar is het geleerde in uw functie?</label>
+  <input type="range" name="useGrade" min="1" max="5" formControlName="useGrade"><br>
+  <label for="feedback"></label>
+  <textarea name="feedback" id="" formControlName="feedbackTeacher" placeholder="feedback voor de docent..." cols="50" rows="5"></textarea>
+  <button type="submit" [disabled]="evaluationForm.invalid" >verstuur</button>
+</form>

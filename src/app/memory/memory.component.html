@@ -1,8 +1,8 @@
 <p>memory works!</p>
 @if (cards$) {
-    @for (card of cards$ | async ; track $index) { 
+    @for (card of cards$ | async | shuffle ; track $index) { 
         <div>
-            <app-card [card]="card"></app-card>
+            <app-card [card]="card" ></app-card>
         </div>
     }
 }

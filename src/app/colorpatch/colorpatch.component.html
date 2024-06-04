@@ -1,5 +1,5 @@
 <div class="bg">
-   <div [title]="patch.name" [style.background-color]="patch.rgba" class="color-patch">
+   <div [title]="patch.name" [style.background-color]="patch | rgba" class="color-patch">
              <button (click)="onDeletePatch.emit()">X</button>
              <button (click)="onEditPatch.emit()">E</button>
         </div>  

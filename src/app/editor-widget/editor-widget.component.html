@@ -8,7 +8,7 @@
         <label for="name">Name</label><input type="text" id="name" [(ngModel)]="editPatch.name">
         
         <div class="preview-box">
-            <div [style.background-color]="editPatch.rgba">
+            <div [style.background-color]="rgba()">
             </div>
         </div>
         <button (click)="onCancel.emit()" class="btn col-6">Cancel</button> 
