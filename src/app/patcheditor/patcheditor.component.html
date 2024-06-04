@@ -5,7 +5,7 @@
         <app-colorpatch [editState]="editState" [patch]="patch" (onDeletePatch)="onClickDelete(patch)" (onEditPatch)="onClickEdit(patch)" />
         } 
     }
-    <button class="btn-a  dd" (click)="onClickAdd()">+</button>
+    <button class="btn-add" (click)="onClickAdd()">+</button>
 </div>
 
 <app-editor-widget [patch]="currentPatch" [editState]="editState" (onCancel)="onCancelEdit()" (onSubmit)="onSubmitPatch($event)" />
