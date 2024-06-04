@@ -1,33 +1,51 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Colorpatch } from '../patcheditor/models/colorpatch';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, map, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PatchService {
-  constructor() { }
-  
-  
+  http: HttpClient = inject(HttpClient);
+  url: string = 'https://my-json-server.typicode.com/cmmnct/patchDemo/patches';
 
-  patches: Colorpatch[] = [
-    new Colorpatch(0, 0, 0, 1, 'black'),
-    new Colorpatch(255, 255, 255, 1, 'white'),
-    new Colorpatch(255, 0, 0, 1, 'red'),
-    new Colorpatch(0, 255, 0, 1, 'green'),
-    new Colorpatch(0, 0, 255, 1, 'blue'),
-    new Colorpatch(255, 255, 0, 1, 'yellow'),
-    new Colorpatch(255, 0, 255, 1, 'magenta'),
-    new Colorpatch(0, 255, 255, 1, 'cyan'),
-  ];
+  constructor() {}
+
+  patches: Colorpatch[] = [];
 
   patches$: BehaviorSubject<Colorpatch[]> = new BehaviorSubject(this.patches);
 
-  getPatches(): Colorpatch[]{
+  getPatches(): Colorpatch[] {
     return this.patches;
   }
 
-  getPatches$(): BehaviorSubject<Colorpatch[]>{
+  getPatches$(): BehaviorSubject<Colorpatch[]> {
+    this.http
+      .get<Colorpatch[]>(this.url)
+      .pipe(
+        map(patchArray => patchArray.map(patch => new Colorpatch(patch.r, patch.g, patch.b, patch.a, patch.name, patch.id)))
+      )
+      .subscribe((patches) => {
+        this.patches = patches;
+        this.patches$.next(this.patches);
+      });
     return this.patches$;
+  }
+
+  create(patch: Colorpatch) {
+    this.patches.push(patch);
+    this.patches$.next(this.patches);
+  }
+
+  update(currentPatch: Colorpatch, patch: Colorpatch) {
+    this.patches[this.patches.indexOf(currentPatch)] = patch;
+    this.patches$.next(this.patches);
+  }
+
+  delete(patch: Colorpatch) {
+    this.patches.splice(this.patches.indexOf(patch), 1); // state managagement
+    // actie richting database
+    this.patches$.next(this.patches);
   }
 }

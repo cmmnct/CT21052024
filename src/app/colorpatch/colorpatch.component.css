@@ -1,5 +1,9 @@
-.color-patch {
+.color-patch,  .bg {
  width: 64px;
  aspect-ratio: 1/1;
- margin: 10px;
+}
+
+.bg{
+  margin: 10px;
+  background: url('/assets/img/bg.svg');  
 }

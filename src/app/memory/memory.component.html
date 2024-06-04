@@ -1,1 +1,8 @@
 <p>memory works!</p>
+@if (cards$) {
+    @for (card of cards$ | async ; track $index) { 
+        <div>
+            <app-card [card]="card"></app-card>
+        </div>
+    }
+}

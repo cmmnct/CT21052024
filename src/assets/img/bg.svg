@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" style="transform-origin: 64px 0px;">
+    <rect x="96" width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px; transform-origin: 32px 112px;" y="96"/>
+    <rect width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px; transform-origin: 32px 112px;" x="32" y="96"/>
+    <rect x="64" width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px;" y="64"/>
+    <rect width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px;" y="64"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)">
+    <rect x="96" width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px; transform-origin: 32px 48px;" y="32"/>
+    <rect width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px; transform-origin: 32px 48px;" x="32" y="32"/>
+    <rect x="64" width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px;"/>
+    <rect width="32" height="32" style="stroke: rgb(0, 0, 0); fill: rgb(169, 169, 169); stroke-width: 0px;"/>
+  </g>
+</svg>

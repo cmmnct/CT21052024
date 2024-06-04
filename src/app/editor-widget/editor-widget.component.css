@@ -16,9 +16,14 @@
     padding: 20px;
 }
 
-.preview-box {
+.preview-box, .preview-box div {
     height: 150px;
 }
+.preview-box {
+    background: url('/assets/img/bg.svg');
+}
+
+
 
 label{
     display: inline-block;

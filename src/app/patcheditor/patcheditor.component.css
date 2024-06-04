@@ -2,3 +2,9 @@
    display: flex;
    flex-wrap: wrap; 
 }
+
+.btn-add {
+   width: 64px;
+   aspect-ratio: 1/1;
+   margin: 10px;
+}
